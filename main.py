@@ -9,7 +9,7 @@ TOKEN = "350738185:J5Jw7a29qVfKSSgLTZZih4HLvrEIdoFJtro"
 BASE_URL = f"https://tapi.bale.ai/bot{TOKEN}/"
 
 # URL وب‌هوک (بعد از دیپلوی از Render می‌گیری)
-WEBHOOK_URL = "YOUR_RENDER_URL_HERE/webhook"  # مثل https://sepidar-bot.onrender.com/webhook
+WEBHOOK_URL = "https://sepidarbot.onrender.com/webhook"  # مثل https://sepidar-bot.onrender.com/webhook
 
 # کلاینت OpenAI
 client = OpenAI(base_url='https://api.gapgpt.app/v1', api_key='sk-HvmZ0QE75KrwmWqQrZ3KZHRHiJQTg2I6Uu8fcWMAOv5GlU35')
@@ -69,3 +69,4 @@ if __name__ == '__main__':
     # اجرای سرور
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
