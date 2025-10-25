@@ -6,7 +6,7 @@ import os
 
 # توکن بات Bale
 TOKEN = "350738185:J5Jw7a29qVfKSSgLTZZih4HLvrEIdoFJtro"
-BASE_URL = f"https://botapi.bale.ai/{TOKEN}"
+BASE_URL = f"https://tapi.bale.ai/bot{TOKEN}/"
 
 # URL وب‌هوک (بعد از دیپلوی از Render می‌گیری)
 WEBHOOK_URL = "YOUR_RENDER_URL_HERE/webhook"  # مثل https://sepidar-bot.onrender.com/webhook
@@ -52,7 +52,7 @@ def webhook():
     return 'OK', 200
 
 def send_message(chat_id, text):
-    url = f"{BASE_URL}/sendMessage"
+    url = f"{BASE_URL}sendMessage"
     payload = {
         "chat_id": chat_id,
         "text": text
@@ -61,7 +61,7 @@ def send_message(chat_id, text):
 
 if __name__ == '__main__':
     # ست کردن وب‌هوک (فقط یک بار)
-    set_webhook_url = f"{BASE_URL}/setWebhook"
+    set_webhook_url = f"{BASE_URL}setWebhook"
     webhook_payload = {"url": WEBHOOK_URL}
     response = requests.post(set_webhook_url, json=webhook_payload)
     print(f"Webhook set response: {response.text}")
